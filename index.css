@@ -1,0 +1,217 @@
+:root {
+    --page-padding: clamp(20px, 2rem, 80px);
+    --text-color: #1C1C08;
+    --primary-color: #596624;
+    --secondary-color: #eeeeee;
+}
+
+@media (min-width: 400px) {
+    :root {
+        --page-padding: clamp(30px, 3rem, 80px);
+    }
+}
+
+/* https://kittygiraudel.com/snippets/sr-only-class/ */
+.sr-only {
+	position: absolute !important;
+
+	overflow: hidden !important;
+
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+
+	white-space: nowrap !important;
+
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	clip-path: inset(50%) !important;
+	border: 0 !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: clamp(1.125rem, 0.231vw + 1.065rem, 1.25rem);
+    line-height: clamp(1.875rem, -0.277vw + 2.097rem, 2.025rem);
+    overflow-x: hidden;
+}
+
+body {
+    padding-block-end: var(--page-padding);
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--secondary-color);
+}
+
+body > * {
+    padding-inline: var(--page-padding);
+    width: calc(100vw - (var(--page-padding) * 2));
+    margin-inline: auto;
+    background-color: var(--secondary-color);
+}
+
+img[src*="logo."] {
+    max-width: calc(100vw - (var(--page-padding) * 2));
+}
+
+main {
+    transform: translateY(calc(var(--page-padding) * -1));
+    position: relative;
+    z-index: 0;
+}
+
+main > * {
+    margin-bottom: 2rem;
+
+    &:first-child {
+        margin-top: var(--page-padding);
+    }
+
+    &:last-child {
+        margin-bottom: var(--page-padding);
+    }
+}
+
+footer {
+    padding: var(--page-padding);
+}
+
+p, li {
+    text-wrap: pretty;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+p:first-child,
+h1, h2 {
+  font-size: 2em;
+  line-height: 1.2;
+  color: var(--primary-color);
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+p:first-child {
+  text-align: center;
+  max-width: 25ch;
+  margin-inline: auto;
+  margin-bottom: var(--page-padding);
+}
+
+p:nth-child(2)::first-letter {
+    float: left;
+
+    padding: 0 0.15em 0 0;
+
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2lh;
+    line-height: 1.9lh;
+    color: var(--primary-color);
+}
+
+header {
+    max-width: unset;
+    min-height: calc(100vh - 1.8rem);
+    min-height: calc(100svh - 1.8rem);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: calc(var(--page-padding) * 0.5);
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    color: var(--secondary-color);
+}
+header::before {
+    content: '';
+    background-color: #838969;
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: -1;
+}
+
+header > img {
+    margin-inline: auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+footer > * {
+    width: 150px;
+}
+
+[class*="tf-"][class*="-popup"] {
+    padding: 0;
+    max-width: unset;
+}
+[data-tf-popup]:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+@media (min-width: 700px) {
+    footer {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 70rem) {
+    body > *:not([class*="tf-"][class*="-popup"]) {
+        max-width: 65ch;
+    }
+
+    main {
+        filter: drop-shadow(0px 0px 30px #00000066);
+    }
+}
+
+@media (min-width: 1500px) {
+  main {
+    padding-block: 2.5rem;
+    transform: translateY(-5.5rem);
+  }
+
+  main > * {
+    padding-inline: 5rem;
+  }
+
+  main > ul {
+    padding-inline-start: 7rem;
+  }
+
+    @supports (inset: 0) {
+        body::after {
+            content: '';
+            display: block;
+            position: fixed;
+            inset: 0;
+            background-image: url('./silhouette.svg');
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-size: 100px;
+            height: calc(100vh - var(--page-padding));
+            width: calc(100% - var(--page-padding));
+            pointer-events: none;
+        }
+    }
+}
