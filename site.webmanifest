@@ -1,0 +1,19 @@
+{
+    "name": "De Marc Chavannes Prijs",
+    "short_name": "Marc Chavannes Prijs",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#838969",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
