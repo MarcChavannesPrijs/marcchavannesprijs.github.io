@@ -134,8 +134,8 @@ p:nth-child(2)::first-letter {
 
 header {
     max-width: unset;
-    min-height: calc(100vh - 1.8rem);
-    min-height: calc(100svh - 1.8rem);
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100svh - 5rem);
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
