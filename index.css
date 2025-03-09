@@ -3,6 +3,8 @@
     --text-color: #1c1c08;
     --primary-color: #596624;
     --secondary-color: #eeeeee;
+
+	color-scheme: only light;
 }
 
 @media (min-width: 400px) {
