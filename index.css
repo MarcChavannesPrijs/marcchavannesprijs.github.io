@@ -3,6 +3,8 @@
     --text-color: #1c1c08;
     --primary-color: #596624;
     --secondary-color: #eeeeee;
+
+	color-scheme: only light;
 }
 
 @media (min-width: 400px) {
@@ -134,8 +136,8 @@ p:nth-child(2)::first-letter {
 
 header {
     max-width: unset;
-    min-height: calc(100vh - 1.8rem);
-    min-height: calc(100svh - 1.8rem);
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100svh - 5rem);
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -178,6 +180,17 @@ footer > * {
 }
 [data-tf-popup]:focus {
     outline: 2px solid var(--primary-color);
+}
+
+.signup-link {
+	background-color: var(--primary-color);
+	color: white;
+	padding: 0.75em 1.75em;
+	border-radius: 2em;
+    font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1rem;
+	text-decoration: none;
 }
 
 @media (min-width: 700px) {
